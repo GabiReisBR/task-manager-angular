@@ -1,0 +1,6 @@
+<div class="task-form">
+    <h2>Adicionar Nova Tarefa</h2>
+    <input [(ngModel)]="newTaskName" placeholder="Digite a tarefa" class="task-input">
+    <button (click)="addTask()" [disabled]="!newTaskName.trim()" class="add-btn">Adicionar</button>
+  </div>
+  

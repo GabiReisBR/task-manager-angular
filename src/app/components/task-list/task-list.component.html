@@ -1,0 +1,22 @@
+<div class="task-list-container">
+    <button class="toggle-btn" (click)="showList = !showList">
+      {{ showList ? 'Ocultar Lista' : 'Exibir Lista' }}
+    </button>
+  
+    <h3>Lista de Tarefas ({{ tasks.length }})</h3>
+  
+    <ul *ngIf="showList" class="task-list">
+      <li *ngFor="let task of tasks" class="task-item">
+        <span class="task-text" [ngClass]="{ 'tarefa-concluida': task.completed }">
+          {{ task.name }}
+        </span>
+        <button 
+          class="complete-btn" 
+          (click)="completeTask(task.id)" 
+          [disabled]="task.completed">
+          {{ task.completed ? '✔ Concluído' : 'Concluir' }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  
